@@ -1,0 +1,28 @@
+{
+  "name": "comparch-nodejs",
+  "version": "1.0.0",
+  "description": "Computer Architecture Labworks of 5th sem BMSTU, IU7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackfeed/comparch-5th-sem-labs.git"
+  },
+  "keywords": [
+    "Node",
+    "Node.js",
+    "Computer",
+    "Architecture",
+    "BMSTU",
+    "IU7",
+    "ICS7"
+  ],
+  "author": "Sergey @hackfeed Kononenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackfeed/comparch-5th-sem-labs/issues"
+  },
+  "homepage": "https://github.com/hackfeed/comparch-5th-sem-labs#readme"
+}
