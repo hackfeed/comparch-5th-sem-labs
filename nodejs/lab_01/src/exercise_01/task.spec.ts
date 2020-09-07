@@ -83,6 +83,10 @@ describe("KidUtils", () => {
   });
 
   describe("getEldestKid", () => {
+    it("should return undefined if array is empty", () => {
+      expect(task.getEldestKid(kids)).toBeUndefined();
+    });
+
     it("should return the eldest kid", () => {
       const fKid: Kid = { surname: "Kononenko", age: 20 };
       const sKid: Kid = { surname: "Bogachenco", age: 21 };

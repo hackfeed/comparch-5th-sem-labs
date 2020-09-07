@@ -65,9 +65,9 @@ export const getAverageAge = (kids: Kid[]): number => {
   return age;
 };
 
-export const getEldestKid = (kids: Kid[]): Kid => {
+export const getEldestKid = (kids: Kid[]): Kid | undefined => {
   if (!kids) {
-    return kids;
+    return undefined;
   }
 
   const eldestKid = kids.reduce((eldest, kid) => (kid.age > eldest.age ? kid : eldest), kids[0]);
