@@ -1,9 +1,8 @@
 import { Kid } from "./interfaces";
 
-let kids: Kid[] = [];
 const vowels = "aeiouy";
 
-export const addKid = (surname: string, age: number): boolean => {
+export const addKid = (kids: Kid[], surname: string, age: number): boolean => {
   const isExist = kids.filter((kid) => kid.surname === surname).length > 0;
 
   if (isExist) {
@@ -20,14 +19,14 @@ export const addKid = (surname: string, age: number): boolean => {
   return true;
 };
 
-export const getKid = (surname: string): Kid | undefined => {
+export const getKid = (kids: Kid[], surname: string): Kid | undefined => {
   const kid = kids.find((kid) => kid.surname === surname);
 
   return kid;
 };
 
-export const updateKid = (surname: string, data: Kid): boolean => {
-  const kid = getKid(surname);
+export const updateKid = (kids: Kid[], surname: string, data: Kid): boolean => {
+  const kid = getKid(kids, surname);
 
   if (!kid) {
     return false;
@@ -39,19 +38,19 @@ export const updateKid = (surname: string, data: Kid): boolean => {
   return true;
 };
 
-export const deleteKid = (surname: string): boolean => {
-  const newKids = kids.filter((kid) => kid.surname === surname);
+export const deleteKid = (kids: Kid[], surname: string): boolean => {
+  const kid = getKid(kids, surname);
 
-  if (newKids === kids) {
-    return false;
+  if (kid) {
+    kids.splice(kids.indexOf(kid), 1);
+
+    return true;
   }
 
-  kids = newKids;
-
-  return true;
+  return false;
 };
 
-export const getAverageAge = (): number => {
+export const getAverageAge = (kids: Kid[]): number => {
   const age = kids
     .map((kid) => kid.age)
     .reduce((total, age, index, array) => {
@@ -66,19 +65,24 @@ export const getAverageAge = (): number => {
   return age;
 };
 
-export const getEldestKid = (): Kid => {
+export const getEldestKid = (kids: Kid[]): Kid => {
+  if (!kids) {
+    return kids;
+  }
+
   const eldestKid = kids.reduce((eldest, kid) => (kid.age > eldest.age ? kid : eldest), kids[0]);
 
   return eldestKid;
 };
 
-export const getKidsByAge = (ages: number[]): Kid[] => {
+export const getKidsByAge = (kids: Kid[], startAge: number, endAge: number): Kid[] => {
+  const ages = Array.from({ length: endAge - startAge + 1 }, (_, i) => i + startAge);
   const agedKids = kids.filter((kid) => ages.includes(kid.age));
 
   return agedKids;
 };
 
-export const getKidsBySurnameLetter = (letter: string): Kid[] => {
+export const getKidsBySurnameLetter = (kids: Kid[], letter: string): Kid[] => {
   const letterKids = kids.filter((kid) =>
     kid.surname.toLowerCase().startsWith(letter.toLowerCase())
   );
@@ -86,13 +90,13 @@ export const getKidsBySurnameLetter = (letter: string): Kid[] => {
   return letterKids;
 };
 
-export const getKidsBySurnameLength = (len: number): Kid[] => {
+export const getKidsBySurnameLength = (kids: Kid[], len: number): Kid[] => {
   const lenKids = kids.filter((kid) => kid.surname.length > len);
 
   return lenKids;
 };
 
-export const getKidsByFirstVowelSurname = (): Kid[] => {
+export const getKidsByFirstVowelSurname = (kids: Kid[]): Kid[] => {
   const vowelKids = kids.filter((kid) => vowels.includes(kid.surname[0].toLowerCase()));
 
   return vowelKids;
