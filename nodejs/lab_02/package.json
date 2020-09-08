@@ -1,0 +1,19 @@
+{
+  "name": "lab_02",
+  "version": "1.0.0",
+  "description": "lab_02",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:cov": "jest --coverage"
+  },
+  "author": "Sergey @hackfeed Kononenko",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  }
+}
