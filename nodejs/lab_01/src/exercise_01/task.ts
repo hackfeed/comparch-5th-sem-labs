@@ -66,7 +66,7 @@ export const getAverageAge = (kids: Kid[]): number => {
 };
 
 export const getEldestKid = (kids: Kid[]): Kid | undefined => {
-  if (!kids) {
+  if (!kids.length) {
     return undefined;
   }
 

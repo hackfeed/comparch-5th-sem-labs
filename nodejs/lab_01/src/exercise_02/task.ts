@@ -76,7 +76,7 @@ export const getStudentsByGroup = (students: Student[], group: string): Student[
 
 export const getMarkestStudent = (students: Student[], group: string): Student | undefined => {
   const foundGroup = getStudentsByGroup(students, group);
-  if (!foundGroup) {
+  if (!foundGroup.length) {
     return undefined;
   }
 
