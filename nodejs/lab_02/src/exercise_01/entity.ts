@@ -1,22 +1,28 @@
 export class Point {
   public constructor(public readonly x: number, public readonly y: number) {}
 
-  public output = (): string => {
+  public getOutputData = (): string => {
     const data = `X: ${this.x}, Y: ${this.y}`;
-    console.log(data);
 
     return data;
+  };
+
+  public output = () => {
+    console.log(this.getOutputData());
   };
 }
 
 export class Section {
   public constructor(public readonly fPoint: Point, public readonly sPoint: Point) {}
 
-  public output = (): string => {
-    const data = `Starting point: ${this.fPoint.output()}, Ending point: ${this.sPoint.output()}`;
-    console.log(data);
+  public getOutputData = (): string => {
+    const data = `Starting point: ${this.fPoint.getOutputData()}, Ending point: ${this.sPoint.getOutputData()}`;
 
     return data;
+  };
+
+  public output = () => {
+    console.log(this.getOutputData());
   };
 
   public getLength = (): number => {

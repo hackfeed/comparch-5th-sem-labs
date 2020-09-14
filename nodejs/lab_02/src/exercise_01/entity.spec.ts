@@ -15,10 +15,16 @@ describe("Point", () => {
     });
   });
 
+  describe("getOutputData", () => {
+    it("should return point data", () => {
+      point = new Point(5, 6);
+      expect(point.getOutputData()).toEqual(`X: ${point.x}, Y: ${point.y}`);
+    });
+  });
+
   describe("output", () => {
     it("should output point data to the console", () => {
-      point = new Point(5, 6);
-      expect(point.output()).toEqual(`X: ${point.x}, Y: ${point.y}`);
+      point.output();
     });
   });
 });
@@ -41,13 +47,22 @@ describe("Section", () => {
   });
 
   describe("output", () => {
-    it("should output point data to the console", () => {
+    it("should return section data", () => {
       const fPoint = new Point(0, 0);
       const sPoint = new Point(3, 4);
       section = new Section(fPoint, sPoint);
-      expect(section.output()).toEqual(
-        `Starting point: ${fPoint.output()}, Ending point: ${sPoint.output()}`
+      expect(section.getOutputData()).toEqual(
+        `Starting point: ${fPoint.getOutputData()}, Ending point: ${sPoint.getOutputData()}`
       );
+    });
+  });
+
+  describe("output", () => {
+    it("should output section data to the console", () => {
+      const fPoint = new Point(0, 0);
+      const sPoint = new Point(3, 4);
+      section = new Section(fPoint, sPoint);
+      section.output();
     });
   });
 
