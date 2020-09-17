@@ -2,9 +2,10 @@
   "name": "comparch-nodejs",
   "version": "1.0.0",
   "description": "Computer Architecture Labworks of 5th sem BMSTU, IU7",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/hackfeed/comparch-5th-sem-labs/issues"
   },
-  "homepage": "https://github.com/hackfeed/comparch-5th-sem-labs#readme"
+  "homepage": "https://github.com/hackfeed/comparch-5th-sem-labs#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  }
 }
