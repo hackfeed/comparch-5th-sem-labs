@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "clean": "rm -f ./src/task*/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,9 @@
     "jest": "^26.4.2",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "@types/readline-sync": "^1.4.3",
+    "readline-sync": "^1.4.10"
   }
 }
