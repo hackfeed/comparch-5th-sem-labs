@@ -1,0 +1,12 @@
+extends ../layouts/main.pug
+
+block content
+    h1 Введите данные
+    form(action="/exercise_03/task", method="post")
+        p Введите названия полей через запятую
+        input(name="fields", type="text", placeholder="Поля")
+        p Введите адрес запроса
+        input(name="route", type="text", placeholder="Адрес")
+        br
+        br
+        button(type="submit") Сгенерировать форму
