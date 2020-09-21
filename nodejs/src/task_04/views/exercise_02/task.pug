@@ -1,9 +1,8 @@
 extends ../layouts/main.pug
 
 block content
-    h1 Введите индекс
-    form(action="/exercise_02/task", method="post")
-        input(name="index", type="number", placeholder="Индекс")
-        br
-        br
-        button(type="submit") Вывести элемент под индексом
+    .centered
+        h1 Введите индекс
+        form(action="/exercise_02/task", method="post")
+            input(name="index", type="number", placeholder="Индекс")
+            button(type="submit") Вывести элемент под индексом

@@ -1,14 +1,13 @@
 extends ../layouts/main.pug
 
 block content
-    h1 Введите три числа
-    form(action="/exercise_01/task", method="post")
-        p Введите первое число
-        input(name="fnum", type="number", placeholder="Первое число")
-        p Введите второе число
-        input(name="snum", type="number", placeholder="Второе число")
-        p Введите третье число
-        input(name="tnum", type="number", placeholder="Третье число")
-        br
-        br
-        button(type="submit") Найти максимум
+    .centered
+        h1 Введите три числа
+        form(action="/exercise_01/task", method="post")
+            label(for="fnum") Введите первое число
+            input(name="fnum", type="number", placeholder="Первое число")
+            label(for="snum") Введите второе число
+            input(name="snum", type="number", placeholder="Второе число")
+            label(for="tnum") Введите третье число
+            input(name="tnum", type="number", placeholder="Третье число")
+            button(type="submit") Найти максимум

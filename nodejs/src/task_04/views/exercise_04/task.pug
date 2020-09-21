@@ -1,14 +1,13 @@
 extends ../layouts/main.pug
 
 block content
-    h1 Введите три числа
-    form(action="/exercise_04/task", method="post")
-        p Введите A
-        input(name="a", type="number", placeholder="A")
-        p Введите B
-        input(name="b", type="number", placeholder="B")
-        p Введите C
-        input(name="c", type="number", placeholder="C")
-        br
-        br
-        button(type="submit") Найти делимые нацело на C числа в промежутке от A до B
+    .centered
+        h1 Введите три числа
+        form(action="/exercise_04/task", method="post")
+            label(for="a") Введите A
+            input(name="a", type="number", placeholder="A")
+            label(for="b") Введите B
+            input(name="b", type="number", placeholder="B")
+            label(for="c") Введите C
+            input(name="c", type="number", placeholder="C")
+            button(type="submit") Найти делимые нацело на C числа в промежутке от A до B
