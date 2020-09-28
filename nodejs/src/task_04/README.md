@@ -1,5 +1,9 @@
 # Отчет по разделу #4
 
+## Цель работы
+
+Ознакомиться с фреймворком серверной разработки **Express**.
+
 ## Задания 1-4
 
 ### Условие
@@ -21,6 +25,7 @@ import { router as ex02Router } from "./routes/exercise_02";
 import { router as ex03Router } from "./routes/exercise_03";
 import { router as ex04Router } from "./routes/exercise_04";
 import express from "express";
+import { join } from "path";
 import { urlencoded } from "body-parser";
 
 const app = express();
@@ -29,6 +34,7 @@ app.set("view engine", "pug");
 app.set("views", "views");
 
 app.use(urlencoded({ extended: false }));
+app.use(express.static(join(__dirname, "public")));
 
 app.get("/", (_: express.Request, res: express.Response) =>
   res.render("index", { pageTitle: "Main page" })
@@ -84,7 +90,7 @@ export const postArrayIndex = (req: express.Request, res: express.Response) => {
 
 ```typescript
 import express from "express";
-import { readFileSync } from "fs";
+import { writeFileSync } from "fs";
 
 export const getGenerateForm = (_: express.Request, res: express.Response) => {
   res.render("exercise_03/task", { pageTitle: "Exercise 3" });
@@ -92,14 +98,17 @@ export const getGenerateForm = (_: express.Request, res: express.Response) => {
 
 export const postGenerateForm = (req: express.Request, res: express.Response) => {
   const formFields = (req.body.fields as string).split(",").map((field) => field.trim());
-  let formBody = `\nform(action="${req.body.route}", method="post")\n`;
+
+  let page = `extends ../layouts/main.pug\nblock content\n\t.centered\n\t\tform(action="${req.body.route}", method="post")\n`;
 
   for (const field of formFields) {
-    formBody += `\tinput(name="${field}", type="text")\n`;
+    page += `\t\t\tinput(name="${field}", type="text", placeholder="${field}")\n`;
   }
-  formBody += `\tbutton(type="submit")</code>`;
+  page += `\t\t\tbutton(type="submit") Отправить`;
 
-  res.render("result", { result: formBody, pageTitle: "Exercise 2" });
+  writeFileSync(`${__dirname}/../views/exercise_03/generated.pug`, page);
+
+  res.render("exercise_03/generated", { pageTitle: "Exercise 3 Generated" });
 };
 ```
 
@@ -183,3 +192,8 @@ router.get("/task", exController.getRangeDividends);
 
 router.post("/task", exController.postRangeDividends);
 ```
+
+## Вывод
+
+В результате работы был разработан сервер на основе **Express**, изучены основные достоинства и
+недостатки данного фреймворка.
