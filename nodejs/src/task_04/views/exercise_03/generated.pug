@@ -1,0 +1,7 @@
+extends ../layouts/main.pug
+block content
+	.centered
+		form(action="/name", method="post")
+			input(name="name", type="text", placeholder="name")
+			input(name="surname", type="text", placeholder="surname")
+			button(type="submit") Отправить

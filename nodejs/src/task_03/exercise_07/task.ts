@@ -42,6 +42,6 @@ export const solveTask = (): void => {
   const resObject = getMaxNestedDepth(JSONData);
 
   console.log(
-    `Max nested depth: ${resObject.depth}\nBranch: ${JSON.stringify(JSONData[resObject.key])}`
+    `Max nested depth: ${resObject.depth}\nBranch: ${resObject.key}: ${JSON.stringify(JSONData[resObject.key])}`
   );
 };
