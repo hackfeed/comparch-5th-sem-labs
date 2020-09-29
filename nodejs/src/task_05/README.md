@@ -151,18 +151,18 @@ router.get("/task", exController.getGetUser);
 router.get("/task/:email", exController.getGetUserData);
 ```
 
-**public/js/exercise_01.js**
+**ajax/exercise_01.ts**
 
-```javascript
-const addUser = (btn) => {
-  const inputs = btn.parentNode.querySelectorAll("input");
+```typescript
+const addUser = () => {
+  const inputs = document.querySelectorAll("input");
   const email = inputs[0].value;
   const surname = inputs[1].value;
   const phone = inputs[2].value;
 
-  const pageBody = document.querySelector("main .centered");
-  let result = pageBody.querySelector(".result");
-  let resultField;
+  const pageBody = document.querySelector("main .centered")!;
+  let result = pageBody!.querySelector(".result")!;
+  let resultField: HTMLHeadingElement;
 
   if (!result) {
     result = document.createElement("div");
@@ -173,7 +173,7 @@ const addUser = (btn) => {
     result.appendChild(resultField);
     pageBody.appendChild(result);
   } else {
-    resultField = result.querySelector("h1");
+    resultField = result.querySelector("h1")!;
   }
 
   fetch(
@@ -198,17 +198,23 @@ const addUser = (btn) => {
     })
     .catch((err) => console.log(err));
 };
+
+const addUserBtn = document.querySelector("button")!;
+addUserBtn.addEventListener("click", addUser);
 ```
 
-**public/js/exercise_02.js**
+**ajax/exercise_02.ts**
 
-```javascript
-const getUser = (btn) => {
-  const email = btn.parentNode.querySelector("input").value;
+```typescript
+const getUser = () => {
+  const email = document.querySelector("input")!.value;
 
-  const pageBody = document.querySelector("main .centered");
-  let result = pageBody.querySelector(".result");
-  let resultField, emailField, surnameField, phoneField;
+  const pageBody = document.querySelector("main .centered")!;
+  let result = pageBody!.querySelector(".result")!;
+  let resultField: HTMLHeadingElement,
+    emailField: HTMLHeadingElement,
+    surnameField: HTMLHeadingElement,
+    phoneField: HTMLHeadingElement;
 
   if (!result) {
     result = document.createElement("div");
@@ -224,7 +230,7 @@ const getUser = (btn) => {
     userFields.forEach((field) => result.appendChild(field));
     pageBody.appendChild(result);
   } else {
-    resultField = result.querySelector("h1");
+    resultField = result.querySelector("h1")!;
 
     emailField = result.querySelectorAll("h2")[0];
     surnameField = result.querySelectorAll("h2")[1];
@@ -253,6 +259,9 @@ const getUser = (btn) => {
     })
     .catch((err) => console.log(err));
 };
+
+const getUserBtn = document.querySelector("button")!;
+getUserBtn.addEventListener("click", getUser);
 ```
 
 **public/css/main.css**
@@ -353,5 +362,5 @@ main button:hover {
 
 ## Вывод
 
-В результате работы был разработан **RESTful** сервис с применением **AJAX**-запросов, выяснены 
+В результате работы был разработан **RESTful** сервис с применением **AJAX**-запросов, выяснены
 плюсы и минусы использования асинхронных запросов.
