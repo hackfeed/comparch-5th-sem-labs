@@ -1,0 +1,14 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 Введите данные пользователя
+        .data-input
+            p Введите электронную почту
+            input(name="email", type="email", placeholder="Электронная почта")
+            p Введите фамилию
+            input(name="surname", type="text", placeholder="Фамилия")
+            p Введите номер телефона
+            input(name="phone", type="tel", placeholder="Телефон")
+            button(type="button", onclick="addUser(this)") Добавить пользователя
+    script(src="/js/exercise_01.js")
