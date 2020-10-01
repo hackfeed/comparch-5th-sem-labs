@@ -1,0 +1,16 @@
+extends ../layouts/main.pug
+
+block content
+    if games.length > 0
+        h1.centered Игры, доступные для возраста #{age}
+            .grid 
+                each game in games
+                    article.card.game-item
+                        header.card__header
+                            h1.game__title #{game.title}
+                        .card__image
+                            img(src=game.imageUrl alt=game.title)
+                        .card__content
+                            h2.game__age #{game.age}+
+    else
+        h1.centered Нет доступных игр с ограничением #{age} лет

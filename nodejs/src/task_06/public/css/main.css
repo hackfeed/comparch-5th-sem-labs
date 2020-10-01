@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1rem;
+  margin: auto;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+form {
+  display: inline-block;
+}
+
+form label,
+form input,
+form textarea {
+  display: block;
+  width: 300px;
+  margin-bottom: 0.25rem;
+}
+
+main a,
+main a:visited {
+  font-size: 2em;
+  text-decoration: none;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main a:hover {
+  color: black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+main button {
+  padding: 3px;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 2px;
+  color: white;
+  width: 300px;
+  cursor: pointer;
+}
+
+main button:hover {
+  background-color: white;
+  color: black;
+}
+
+.centered {
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.game-item {
+  width: 20rem;
+  max-width: 95%;
+  margin: 1rem;
+}
+
+.game__title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.game__age {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.26);
+}
+
+.card__header,
+.card__content {
+  padding: 1rem;
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+  margin: 0;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.image__404 {
+  width: 30%;
+}
+
+.image__homepage {
+  width: 3%;
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+}

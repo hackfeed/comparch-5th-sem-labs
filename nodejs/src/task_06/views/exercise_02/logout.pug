@@ -1,0 +1,7 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 #{message}
+        form(action="/exercise_02/logout", method="post")
+            button(type="submit") Выйти

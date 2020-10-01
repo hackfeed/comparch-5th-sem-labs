@@ -1,0 +1,9 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 #{message}
+        form(action="/exercise_02/login", method="post")
+            input(name="login", type="text", placeholder="Логин")
+            input(name="pass", type="password", placeholder="Пароль")
+            button(type="submit") Войти
