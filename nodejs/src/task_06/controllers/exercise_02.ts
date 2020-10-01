@@ -32,28 +32,6 @@ export const getLogin = (req: express.Request, res: express.Response) => {
   res.render("exercise_02/login", { pageTitle: "Exercise 2", message: "Введите логин и пароль" });
 };
 
-export const getLogout = (req: express.Request, res: express.Response) => {
-  if (req.session!.isLoggedIn) {
-    return res.render("exercise_02/logout", {
-      pageTitle: "Exercise 2",
-      message: "Выйти из системы",
-    });
-  }
-  res.redirect("/");
-};
-
-export const postLogout = (req: express.Request, res: express.Response) => {
-  if (req.session!.isLoggedIn) {
-    const login = req.session!.login;
-    req.session?.destroy(() => {});
-    return res.render("exercise_02/message", {
-      pageTitle: "Exercise 2",
-      message: `Пользователь ${login} вышел из системы`,
-    });
-  }
-  res.redirect("/");
-};
-
 export const postLogin = (req: express.Request, res: express.Response) => {
   const login = req.body.login;
   const password = req.body.pass;
@@ -77,6 +55,28 @@ export const postLogin = (req: express.Request, res: express.Response) => {
     pageTitle: "Exercise 2",
     message: `Пользователь ${login} вошел в систему`,
   });
+};
+
+export const getLogout = (req: express.Request, res: express.Response) => {
+  if (req.session!.isLoggedIn) {
+    return res.render("exercise_02/logout", {
+      pageTitle: "Exercise 2",
+      message: "Выйти из системы",
+    });
+  }
+  res.redirect("/");
+};
+
+export const postLogout = (req: express.Request, res: express.Response) => {
+  if (req.session!.isLoggedIn) {
+    const login = req.session!.login;
+    req.session?.destroy(() => {});
+    return res.render("exercise_02/message", {
+      pageTitle: "Exercise 2",
+      message: `Пользователь ${login} вышел из системы`,
+    });
+  }
+  res.redirect("/");
 };
 
 export const getUser = (req: express.Request, res: express.Response) => {
