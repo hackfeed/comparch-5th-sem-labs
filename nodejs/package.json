@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/hackfeed/comparch-5th-sem-labs#readme",
   "devDependencies": {
+    "@types/child-process-promise": "^2.2.1",
     "@types/jest": "^26.0.14",
     "jest": "^26.4.2",
     "ts-jest": "^26.3.0",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "@types/readline-sync": "^1.4.3",
+    "child-process-promise": "^2.2.1",
     "readline-sync": "^1.4.10"
   }
 }
