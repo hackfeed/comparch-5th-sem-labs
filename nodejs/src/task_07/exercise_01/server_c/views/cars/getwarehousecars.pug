@@ -1,0 +1,9 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 Введите данные склада
+        form(action="/getwarehousecars", method="post")
+            label(for="name") Введите название склада
+            input(name="name", type="text", placeholder="Название")
+            button(type="submit") Найти автомобили склада

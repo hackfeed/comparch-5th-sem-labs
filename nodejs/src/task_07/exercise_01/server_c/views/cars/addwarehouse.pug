@@ -1,0 +1,11 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 Введите данные склада
+        form(action="/addwarehouse", method="post")
+            label(for="name") Введите название склада
+            input(name="name", type="text", placeholder="Название")
+            label(for="cars") Введите автомобили (через запятую)
+            input(name="cars", type="cars", placeholder="Автомобили")
+            button(type="submit") Добавить данные

@@ -1,0 +1,9 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 Введите данные автомобиля
+        form(action="/getcarprice", method="post")
+            label(for="model") Введите модель автомобиля
+            input(name="model", type="text", placeholder="Модель")
+            button(type="submit") Узнать цену

@@ -1,0 +1,11 @@
+extends ../layouts/main.pug
+
+block content
+    .centered
+        h1 Введите данные автомобиля
+        form(action="/addcar", method="post")
+            label(for="model") Введите модель автомобиля
+            input(name="model", type="text", placeholder="Модель")
+            label(for="price") Введите цену автомобиля
+            input(name="price", type="number", placeholder="Цена")
+            button(type="submit") Добавить данные

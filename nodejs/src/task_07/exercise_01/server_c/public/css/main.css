@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1rem;
+  margin: auto;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+form {
+  display: inline-block;
+}
+
+form label,
+form input,
+form textarea {
+  display: block;
+  width: 300px;
+  margin-bottom: 0.25rem;
+}
+
+main a,
+main a:visited {
+  font-size: 2em;
+  text-decoration: none;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main a:hover {
+  color: black;
+  background-color: white;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+main button {
+  padding: 3px;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 2px;
+  color: white;
+  width: 300px;
+  cursor: pointer;
+}
+
+main button:hover {
+  background-color: white;
+  color: black;
+}
+
+.centered {
+  text-align: center;
+}
+
+.image__404 {
+  width: 30%;
+}
+
+.image__homepage {
+  width: 3%;
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+}
